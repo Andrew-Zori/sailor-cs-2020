@@ -44,10 +44,14 @@ def find_salad(n, street_map):
                     find_one = True
                 end += 1
                 start += 1
+    dic = {}
+    
     if find_one:
-        return int(cheapest)
+        dic["result"] = int(cheapest)
+        return dic
     else:
-        return 0
+        dic["result"] = 0
+        return dic
 
 
 
