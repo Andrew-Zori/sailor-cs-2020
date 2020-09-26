@@ -24,4 +24,4 @@ def guess_result(ma, mb, mc):
     wa = 60
     wb = 60
     wc = 60
-    return (ma * wa + mb * wb + mc * wc)
+    return (int(ma) * wa + int(mb) * wb + int(mc) * wc)
