@@ -13,9 +13,8 @@ def evaluateSalad_Spree():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     # inputValue = data.get("input");
-    result = []
-    for test_case in data:
-        result.append(find_salad(test_case["number_of_salads"], test_case["salad_prices_street_map"]))
+
+    result = (find_salad(data["number_of_salads"], data["salad_prices_street_map"]))
 
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
