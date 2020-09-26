@@ -14,14 +14,16 @@ def evaluatefruit():
     data = json.loads(data.decode('utf-8'))
     ans = 0
 
-    name_list = []
-    for key in data.keys():
-        name_list.append(key)
+    weight_l = [30,60,10]
 
-    weight = {name_list[0]: 60,
-    name_list[1]: 60,
-    name_list[2]: 60}
+    # name_list = []
+    # for key in data.keys():
+    #     name_list.append(key)
 
-    for key, value in data.items():
-        ans += weight[key] * value
+    # weight = {name_list[0]: 60,
+    # name_list[1]: 60,
+    # name_list[2]: 60}
+
+    for i,(_, value) in enumerate(data.items()):
+        ans += weight_l[i] * value
     return str(ans)
