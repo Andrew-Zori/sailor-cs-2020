@@ -8,11 +8,7 @@ from codeitsuisse import app
 
 logger = logging.getLogger(__name__)
 
-# I change fruitbasket to fruit_basket just to test!!!!!!!!!!!!!!
-#
-#
-#!!!!!!!!!!!!!!!!!!!!!
-@app.route('/fruit_basket', methods=['POST'])
+@app.route('/fruitbasket', methods=['POST'])
 def evaluateFruitbasket():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
