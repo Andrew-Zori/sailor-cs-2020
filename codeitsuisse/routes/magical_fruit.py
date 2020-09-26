@@ -19,7 +19,7 @@ def evaluateFruitbasket():
 
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
-    return jsonify(result)
+    return "0"
 
 def guess_result(ma, mb, mc):
     wa = 60
