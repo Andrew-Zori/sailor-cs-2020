@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 @app.route('/salad-spree', methods=['POST'])
 def evaluateSalad_Spree():
-    data = request.get_json()
+    data = request.get_data()
     logging.info("data sent for evaluation {}".format(data))
     # inputValue = data.get("input");
 
