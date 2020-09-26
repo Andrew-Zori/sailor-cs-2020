@@ -61,7 +61,7 @@ def result_func(shape_cords, line_cords):
 
             if x_intersect <= max(x1,x2) and x_intersect >= min(x1,x2)\
                and y_intersect <= max(y1,y2) and y_intersect >= min(y1,y2):
-                
-                result.append({"x" : x_intersect,\
-                           "y" : y_intersect})
+                to_append = {"x" : round(x_intersect,2), "y" : round(y_intersect,2)}
+                if to_append not in result:
+                    result.append(to_append)
     return result
