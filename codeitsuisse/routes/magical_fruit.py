@@ -11,10 +11,11 @@ logger = logging.getLogger(__name__)
 @app.route('/fruitbasket', methods=['POST'])
 def evaluateFruitbasket():
     data = request.get_data()
+    data = json.loads(data)
     logging.info("data sent for evaluation {}".format(data))
     # inputValue = data.get("input");
 
-    result = (guess_result(data[0], data[1],data[2]))
+    result = (guess_result(data["maApple"], data["maWatermelon"],data["maBanana"]))
 
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
@@ -25,3 +26,4 @@ def guess_result(ma, mb, mc):
     wb = 60
     wc = 60
     return (int(ma) * wa + int(mb) * wb + int(mc) * wc)
+    # return (mb)
