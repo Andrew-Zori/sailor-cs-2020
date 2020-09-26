@@ -14,7 +14,7 @@ def evaluatefruit():
     data = json.loads(data.decode('utf-8'))
     ans = 0
 
-    weight_l = [50,50,50]
+    weight_l = [45,60,50]
 
     # name_list = []
     # for key in data.keys():
