@@ -25,7 +25,7 @@ def evaluateSocialDisctance():
     to_return = {"answers" : result}
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
-    return jsonify(to_return)
+    return json.dumps(to_return)
 
 def num_sd(n, people, space):
         if n == people + space * (people-1):
