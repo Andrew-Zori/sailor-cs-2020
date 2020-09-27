@@ -8,6 +8,6 @@ import codeitsuisse.routes.Contact_Tracing
 import codeitsuisse.routes.Geometry
 import codeitsuisse.routes.socialdist
 import codeitsuisse.routes.cluster
-
+import codeitsuisse.routes.cleanfloor
 
 
