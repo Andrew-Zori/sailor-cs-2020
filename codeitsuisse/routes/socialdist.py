@@ -17,15 +17,12 @@ def evaluateSocialDisctance():
     result = {}
     for _, value_q in data.items():
         for key, value in (value_q.items()):
-            value_list = []
-            for type_value in value.values():
-                value_list.append(type_value)
-            result[key] = int(num_sd(value_list[0],value_list[1],value_list[2]))
+            result[key] = int(num_sd(value["seats"], value["people"], value["spaces"]))
 
     to_return = {"answers" : result}
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
-    return json.dumps(to_return)
+    return jsonify(to_return)
 
 def num_sd(n, people, space):
         if n == people + space * (people-1):
@@ -35,6 +32,9 @@ def num_sd(n, people, space):
         if n == people + space * (people-1) + 2:
                 return ( factorial(1+people)/(2 * factorial(people - 1)) + \
                          people + 1)
+
+        if people == 1:
+            return n
 
         # C( (n - (people - 1) * space)
         x = n - (people - 1) * space - people
