@@ -10,7 +10,8 @@ logger = logging.getLogger(__name__)
 
 @app.route('/social_distancing', methods=['POST'])
 def evaluateSocialDisctance():
-    data = request.get_json()
+    data = request.get_data()
+    data = json.loads(data.decode('utf-8'))
     logging.info("data sent for evaluation {}".format(data))
     # inputValue = data.get("input");
     result = {}
@@ -18,7 +19,7 @@ def evaluateSocialDisctance():
         for i, (_, value) in enumerate(sample.items()):
             result[str(i)] = int(num_sd(value["seats"],value["people"],value["spaces"]))
 
-    to_return = {"answer" : result}
+    to_return = {"answers" : result}
     # result = inputValue * inputValue
     logging.info("My result :{}".format(result))
     return jsonify(to_return)
