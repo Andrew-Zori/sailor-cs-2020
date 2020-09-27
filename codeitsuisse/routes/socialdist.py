@@ -15,9 +15,12 @@ def evaluateSocialDisctance():
     logging.info("data sent for evaluation {}".format(data))
     # inputValue = data.get("input");
     result = {}
-    for _, sample in data.items():
-        for i, (_, value) in enumerate(sample.items()):
-            result[str(i)] = int(num_sd(value["seats"],value["people"],value["spaces"]))
+    for _, value_q in data.items():
+        for key, value in (value_q.items()):
+            value_list = []
+            for type_value in value.values():
+                value_list.append(type_value)
+            result[key] = int(num_sd(value_list[0],value_list[1],value_list[2]))
 
     to_return = {"answers" : result}
     # result = inputValue * inputValue
