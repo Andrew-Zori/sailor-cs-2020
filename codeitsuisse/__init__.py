@@ -9,5 +9,6 @@ import codeitsuisse.routes.Geometry
 import codeitsuisse.routes.socialdist
 import codeitsuisse.routes.cluster
 import codeitsuisse.routes.cleanfloor
+import codeitsuisse.routes.supermarket
 
 
