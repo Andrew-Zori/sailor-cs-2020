@@ -19,7 +19,7 @@ def evaluateSupermarket():
 
     for _, value_q in data.items():
         for key, value in (value_q.items()):
-            answer[key] = step_count(value["maze"], value['start'], value['end'])
+            answer[key] = int(step_count(value["maze"], value['start'], value['end']))
 
     # result = inputValue * inputValue
     result = {"answers" : answer}
